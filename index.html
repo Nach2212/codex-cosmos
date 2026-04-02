@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODEX DEL COSMOS | GDD Oficial de Despliegue</title>
+    <title>CODEX DEL COSMOS | GDD Oficial 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=JetBrains+Mono:wght@200;400;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
             --cyan: #00f2ff;
             --blue-deep: #010409;
             --glass: rgba(10, 20, 40, 0.95);
-            --neon-glow: 0 0 50px rgba(0, 242, 255, 0.3);
+            --neon-glow: 0 0 60px rgba(0, 242, 255, 0.4);
         }
 
         body {
@@ -33,27 +33,27 @@
 
         .glass-card {
             background: var(--glass);
-            backdrop-filter: blur(50px);
-            border: 1px solid rgba(0, 242, 255, 0.15);
+            backdrop-filter: blur(60px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
             box-shadow: var(--neon-glow);
             position: relative;
             overflow: hidden;
-            border-radius: 2rem;
-            z-index: 1;
+            border-radius: 3rem;
+            z-index: 10;
         }
 
         .glass-card:hover {
             border-color: var(--cyan);
-            box-shadow: 0 0 70px rgba(0, 242, 255, 0.3);
+            box-shadow: 0 0 80px rgba(0, 242, 255, 0.3);
         }
 
         .section-number {
-            font-size: 15rem;
+            font-size: 18rem;
             line-height: 1;
             font-weight: 900;
-            color: rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.04);
             position: absolute;
-            top: -3rem;
+            top: -4rem;
             left: -3rem;
             z-index: 0;
             font-family: 'JetBrains Mono';
@@ -61,8 +61,8 @@
         }
 
         .tech-border {
-            border-left: 8px solid var(--cyan);
-            padding-left: 2rem;
+            border-left: 10px solid var(--cyan);
+            padding-left: 2.5rem;
             position: relative;
             z-index: 1;
         }
@@ -71,8 +71,8 @@
 
         /* Estilo para imágenes PNG 1920x1080 */
         .img-slot {
-            background: rgba(0,0,0,0.8);
-            border: 1px solid rgba(0, 242, 255, 0.2);
+            background: rgba(0,0,0,0.85);
+            border: 1px solid rgba(0, 242, 255, 0.3);
             width: 100%;
             aspect-ratio: 16 / 9;
             display: flex;
@@ -80,27 +80,28 @@
             justify-content: center;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+            border-radius: 2rem;
         }
         .img-slot img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .img-slot:hover img { transform: scale(1.03); }
+        .img-slot:hover img { transform: scale(1.08); }
 
         .scanline {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
             background-size: 100% 4px;
             z-index: 100;
             pointer-events: none;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10vh 0; }
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 15vh 0; }
     </style>
 </head>
 <body class="antialiased">
@@ -111,32 +112,32 @@
     <!-- HUD INTERFACE -->
     <div class="fixed top-0 left-0 w-full p-8 z-50 flex justify-between items-start pointer-events-none select-none">
         <div class="pointer-events-auto">
-            <div class="flex items-center gap-4 mono text-[12px] text-cyan-400 font-bold">
-                <span class="w-3 h-3 bg-cyan-400 rounded-full animate-ping"></span>
-                QUANTUM_RESEARCH_PROTOCOL // LAB_CONCEPCIÓN
+            <div class="flex items-center gap-5 mono text-[14px] text-cyan-400 font-black tracking-tighter">
+                <span class="w-4 h-4 bg-cyan-400 rounded-full animate-ping"></span>
+                QUANTUM_RESEARCH_PROTOCOL // LAB_CHILE
             </div>
-            <div class="text-[10px] text-slate-500 mono mt-2 tracking-widest uppercase italic">
-                Chile, Biobío - Sintonización de Fotones Activa
+            <div class="text-[11px] text-slate-500 mono mt-2 tracking-widest uppercase italic">
+                Sintonización de fotones activa // Biobío, Chile
             </div>
         </div>
         <div class="text-right pointer-events-auto">
-            <div class="mono text-[12px] text-slate-300 font-bold uppercase">Lead Dev: <span class="text-cyan-400">Ignacio Aguayo</span></div>
-            <div class="mono text-[10px] text-cyan-500/40 uppercase tracking-[0.4em]">Codex_Cosmos_Final_v3.0</div>
+            <div class="mono text-[14px] text-slate-300 font-bold uppercase">Lead Developer: <span class="text-cyan-400">Ignacio Aguayo</span></div>
+            <div class="mono text-[11px] text-cyan-500/40 uppercase tracking-[0.4em]">Codex_Cosmos_Final_v3.1</div>
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-8 relative">
+    <div class="max-w-7xl mx-auto px-10 relative">
 
         <!-- HEADER / INTRODUCCIÓN NARRATIVA -->
         <header class="min-h-screen flex flex-col justify-center">
-            <div class="space-y-12">
-                <h1 class="text-9xl md:text-[14rem] font-bold leading-none tracking-tighter uppercase select-none">
+            <div class="space-y-16">
+                <h1 class="text-9xl md:text-[16rem] font-bold leading-none tracking-tighter uppercase select-none">
                     CODEX<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-800 italic">COSMOS</span>
                 </h1>
-                <div class="glass-card p-12 border-l-[16px] border-cyan-500 mt-10">
-                    <h3 class="mono text-cyan-400 text-sm mb-6 uppercase tracking-[0.5em]">LOG_001: El Origen de la Observación</h3>
-                    <p class="text-3xl font-light leading-relaxed text-slate-200 italic">
-                        "La luz es un registro fósil. En Concepción, hemos desarrollado la tecnología para sintonizar fotones de hace 13.800 millones de años. No simulamos el Big Bang; lo observamos en tiempo real. Como Crononautas, nuestro deber es registrar el origen antes de que la entropía consuma los datos."
+                <div class="glass-card p-16 border-l-[25px] border-cyan-500 mt-10">
+                    <h3 class="mono text-cyan-400 text-sm mb-8 uppercase tracking-[0.6em] font-bold">LOG_001: El Origen de la Observación</h3>
+                    <p class="text-4xl font-light leading-relaxed text-slate-200 italic">
+                        "La luz es un registro fósil. En Chile, hemos desarrollado la tecnología para sintonizar fotones de hace 13.800 millones de años. No simulamos el Big Bang; lo observamos en tiempo real. Como Crononautas, nuestro deber es registrar el origen antes de que la entropía consuma los datos."
                     </p>
                 </div>
             </div>
@@ -145,16 +146,16 @@
         <!-- 01 CONCEPTO GENERAL -->
         <section id="s1" class="relative">
             <span class="section-number">01</span>
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-12">
-                    <h2 class="text-6xl font-bold uppercase tracking-widest">01_Concepto</h2>
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="space-y-14">
+                    <h2 class="text-8xl font-bold uppercase tracking-widest">01_Concepto</h2>
                     <div class="tech-border">
-                        <p class="text-3xl font-light leading-relaxed text-slate-300">
-                            Obra experimental de Realidad Virtual y Divulgación Científica de Alta Fidelidad. Una ventana tecnológica al pasado que permite al usuario viajar cronológicamente por la historia del cosmos mediante la observación de fotones antiguos.
+                        <p class="text-4xl font-light leading-relaxed text-slate-300">
+                            Obra experimental de Realidad Virtual y Divulgación Científica de Alta Fidelidad. Una ventana tecnológica al pasado que permite al usuario viajar cronológicamente por el cosmos.
                         </p>
                     </div>
                 </div>
-                <div class="img-slot rounded-[3rem]">
+                <div class="img-slot">
                     <img src="assets/concepto_lab.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=CONCEPTO_VISUAL_LAB'">
                 </div>
             </div>
@@ -163,20 +164,20 @@
         <!-- 02 DESCRIPCIÓN GENERAL -->
         <section id="s2" class="relative">
             <span class="section-number">02</span>
-            <div class="space-y-16">
-                <h2 class="text-6xl font-bold uppercase tracking-widest text-right">02_Descripción</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card p-12 space-y-6 border-t-8 border-cyan-500">
-                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest">Premisa</h4>
-                        <p class="text-lg text-slate-300">El usuario en el "Mirador del Tiempo" traduce fotones antiguos en una experiencia inmersiva 360°, viendo el Big Bang con ojos humanos.</p>
+            <div class="space-y-20">
+                <h2 class="text-8xl font-bold uppercase tracking-widest text-right">02_Descripción</h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="glass-card p-14 space-y-8 border-t-[12px] border-cyan-500">
+                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest text-xl">Premisa</h4>
+                        <p class="text-2xl text-slate-300">El usuario en el "Mirador del Tiempo" traduce fotones antiguos en una experiencia inmersiva 360°, viendo el Big Bang con ojos humanos.</p>
                     </div>
-                    <div class="glass-card p-12 space-y-6">
-                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest">Experiencia</h4>
-                        <p class="text-lg text-slate-300">Generar asombro (Awe) y pequeñez ante la escala universal. No es un juego de desafíos, sino una presencia absoluta en el vacío.</p>
+                    <div class="glass-card p-14 space-y-8">
+                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest text-xl">Experiencia</h4>
+                        <p class="text-2xl text-slate-300">Generar asombro (Awe) y pequeñez ante la escala universal. No es un juego de desafíos, sino una presencia absoluta en el vacío.</p>
                     </div>
-                    <div class="glass-card p-12 space-y-6 border-b-8 border-cyan-500">
-                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest">Objetivo</h4>
-                        <p class="text-lg text-slate-300">Completar el registro digital del Códice navegando por los hitos fundamentales de la creación de la materia.</p>
+                    <div class="glass-card p-14 space-y-8 border-b-[12px] border-cyan-500">
+                        <h4 class="mono text-cyan-400 font-bold uppercase tracking-widest text-xl">Objetivo</h4>
+                        <p class="text-2xl text-slate-300">Completar el registro digital del Códice navegando por los hitos fundamentales de la creación de la materia.</p>
                     </div>
                 </div>
             </div>
@@ -185,20 +186,20 @@
         <!-- 03 MECÁNICAS -->
         <section id="s3" class="relative">
             <span class="section-number">03</span>
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="img-slot rounded-[3rem]">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="img-slot">
                     <img src="assets/mecanica_hand.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=MECHANIC_HAND_TRACKING'">
                 </div>
-                <div class="space-y-12">
-                    <h2 class="text-6xl font-bold uppercase tracking-widest text-white">03_Mecánicas</h2>
-                    <div class="space-y-10">
+                <div class="space-y-16">
+                    <h2 class="text-8xl font-bold uppercase tracking-widest text-white">03_Mecánicas</h2>
+                    <div class="space-y-12">
                         <div class="tech-border">
-                            <h4 class="text-2xl font-bold text-cyan-400 uppercase mb-4">Crononavegación Gestual</h4>
-                            <p class="text-xl text-slate-400">Basado en <b>Moon Knight</b>. El usuario usa sus manos para manipular el firmamento, generando un efecto de 'scrubbing' temporal fluido y táctil.</p>
+                            <h4 class="text-4xl font-bold text-cyan-400 uppercase mb-6">Crononavegación Gestual</h4>
+                            <p class="text-2xl text-slate-400 leading-relaxed">Basado en <b>Moon Knight</b>. El usuario usa sus manos para manipular el firmamento, generando un efecto de 'scrubbing' temporal fluido.</p>
                         </div>
                         <div class="tech-border border-blue-500">
-                            <h4 class="text-2xl font-bold text-blue-400 uppercase mb-4">Interfaz Códice</h4>
-                            <p class="text-xl text-slate-400">Dispositivo holográfico que se materializa frente al usuario. Tablet cuántica que despliega datos estelares en tiempo real.</p>
+                            <h4 class="text-4xl font-bold text-blue-400 uppercase mb-6">Interfaz Códice</h4>
+                            <p class="text-2xl text-slate-400 leading-relaxed">Dispositivo holográfico que se materializa frente al usuario. Tablet cuántica que despliega datos estelares en tiempo real.</p>
                         </div>
                     </div>
                 </div>
@@ -208,19 +209,19 @@
         <!-- 04 NARRATIVA Y PERSONAJES -->
         <section id="s4" class="relative">
             <span class="section-number">04</span>
-            <div class="glass-card p-20 rounded-[5rem] grid lg:grid-cols-12 gap-16 items-center border-t-8 border-cyan-500">
+            <div class="glass-card p-24 rounded-[6rem] grid lg:grid-cols-12 gap-20 items-center border-t-[15px] border-cyan-500">
                 <div class="lg:col-span-5 relative">
-                    <div class="absolute inset-0 bg-cyan-500/20 blur-[100px] rounded-full"></div>
+                    <div class="absolute inset-0 bg-cyan-500/20 blur-[120px] rounded-full"></div>
                     <img src="assets/kpler.png" 
-                         class="w-full h-auto border-2 border-cyan-500/30 p-12 rounded-full relative z-10 brightness-110 shadow-[0_0_80px_rgba(0,242,255,0.3)]"
+                         class="w-full h-auto border-2 border-cyan-500/30 p-14 rounded-full relative z-10 brightness-110 shadow-[0_0_100px_rgba(0,242,255,0.4)]"
                          onerror="this.src='https://via.placeholder.com/1080x1080/010409/00f2ff?text=K-PLER_UNIT'">
                 </div>
-                <div class="lg:col-span-7 space-y-10">
-                    <h2 class="text-8xl font-bold uppercase text-white tracking-tighter">04_K-PLER</h2>
-                    <p class="text-3xl font-light leading-relaxed text-slate-300">
+                <div class="lg:col-span-7 space-y-12">
+                    <h2 class="text-9xl font-bold uppercase text-white tracking-tighter">04_K-PLER</h2>
+                    <p class="text-4xl font-light leading-relaxed text-slate-300">
                         <b>IA de Protocolo.</b> Inspirada en la frialdad de <b>GLaDOS</b> y la eficiencia de <b>EVA</b>. Asegura que la psique del usuario soporte la inmensidad de lo que está observando. Nombrado en honor a Johannes Kepler y a **Kepler**, el gato del desarrollador.
                     </p>
-                    <p class="mono text-xs text-slate-500 uppercase tracking-widest">ID_CHIP: KEPLER_SOLO_DEV_2212</p>
+                    <p class="mono text-lg text-slate-500 uppercase tracking-[0.5em] font-black">ID_CORE: KEPLER_SOLO_DEV_2026</p>
                 </div>
             </div>
         </section>
@@ -228,83 +229,83 @@
         <!-- 05 PÚBLICO OBJETIVO -->
         <section id="s5" class="relative">
             <span class="section-number">05</span>
-            <div class="space-y-16">
-                <h2 class="text-6xl font-bold uppercase tracking-widest text-center">05_Target</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="glass-card p-10 tech-border"><b>Nativos Digitales:</b> 12-18 años, Enseñanza Media.</div>
-                    <div class="glass-card p-10 border-l-8 border-blue-500"><b>Aprendices Kinestésicos:</b> Requieren manipular para entender.</div>
-                    <div class="glass-card p-10 border-l-8 border-indigo-500"><b>Docentes STEM:</b> Buscan vanguardia para sus aulas.</div>
-                    <div class="glass-card p-10 border-l-8 border-cyan-500"><b>Fans de Sci-Fi:</b> Valoran el Hard Science.</div>
+            <div class="space-y-20">
+                <h2 class="text-8xl font-bold uppercase tracking-widest text-center">05_Target</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="glass-card p-12 tech-border"><p class="text-2xl font-bold text-white mb-6 uppercase">Nativos Digitales</p>12-18 años, Enseñanza Media.</div>
+                    <div class="glass-card p-12 border-l-[12px] border-blue-500"><p class="text-2xl font-bold text-white mb-6 uppercase">Aprendices Kinestésicos</p>Requieren manipular para entender conceptos físicos.</div>
+                    <div class="glass-card p-12 border-l-[12px] border-indigo-500"><p class="text-2xl font-bold text-white mb-6 uppercase">Docentes STEM</p>Buscan vanguardia para sus aulas de ciencia.</div>
+                    <div class="glass-card p-12 border-l-[12px] border-cyan-500"><p class="text-2xl font-bold text-white mb-6 uppercase">Fans de Sci-Fi</p>Valoran el Hard Science y la estética Sleek.</div>
                 </div>
             </div>
         </section>
 
-        <!-- 06 REFERENTES -->
+        <!-- 06 REFERENTES (PNG 1920x1080) -->
         <section id="s6" class="relative">
             <span class="section-number">06</span>
-            <div class="space-y-16">
-                <h2 class="text-6xl font-bold uppercase tracking-widest">06_Referentes</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-xs mono">
-                    <div class="space-y-6">
-                        <div class="img-slot rounded-3xl h-64">
+            <div class="space-y-20">
+                <h2 class="text-8xl font-bold uppercase tracking-widest">06_Referentes</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center text-xs mono">
+                    <div class="space-y-8">
+                        <div class="img-slot">
                             <img src="assets/ref_titans.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=TITANS_OF_SPACE'">
                         </div>
-                        <p class="text-cyan-400">Escala: Titans of Space</p>
+                        <p class="text-cyan-400 text-2xl uppercase font-black">VR: Titans of Space</p>
                     </div>
-                    <div class="space-y-6">
-                        <div class="img-slot rounded-3xl h-64">
+                    <div class="space-y-8">
+                        <div class="img-slot">
                             <img src="assets/ref_interstellar.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=INTERSTELLAR'">
                         </div>
-                        <p class="text-cyan-400">Visual: Interstellar</p>
+                        <p class="text-cyan-400 text-2xl uppercase font-black">Visual: Interstellar</p>
                     </div>
-                    <div class="space-y-6">
-                        <div class="img-slot rounded-3xl h-64">
+                    <div class="space-y-8">
+                        <div class="img-slot">
                             <img src="assets/ref_moonknight.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=MOON_KNIGHT'">
                         </div>
-                        <p class="text-cyan-400">Interactividad: Moon Knight</p>
+                        <p class="text-cyan-400 text-2xl uppercase font-black">Control: Moon Knight</p>
                     </div>
-                    <div class="space-y-6">
-                        <div class="img-slot rounded-3xl h-64">
+                    <div class="space-y-8">
+                        <div class="img-slot">
                             <img src="assets/ref_higgs.png" alt="" onerror="this.src='https://via.placeholder.com/1920x1080/010409/00f2ff?text=EL_BOSON_DE_HIGGS'">
                         </div>
-                        <p class="text-cyan-400">Divulgación: Santaolalla</p>
+                        <p class="text-cyan-400 text-2xl uppercase font-black">Teoría: Santaolalla</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 07 VIABILIDAD -->
+        <!-- 07 VIABILIDAD (ALCANCE, RECURSOS, ROLES, PLANIFICACIÓN) -->
         <section id="s7" class="relative">
             <span class="section-number">07</span>
-            <div class="space-y-20">
-                <h2 class="text-7xl font-bold uppercase tracking-widest">07_Viabilidad</h2>
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="glass-card p-12 space-y-10 rounded-[3rem]">
-                        <div class="space-y-6">
-                            <h4 class="text-3xl font-bold uppercase text-cyan-400">Alcance Estimado</h4>
-                            <p class="text-xl text-slate-400 leading-relaxed">Se proyecta alcanzar un Prototipo Funcional (MVP) que incluya el Mirador del Tiempo, el sistema de navegación gestual y el primer hito completo: La Singularidad/Big Bang.</p>
+            <div class="space-y-24">
+                <h2 class="text-9xl font-bold uppercase tracking-widest">07_Viabilidad</h2>
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="glass-card p-16 space-y-14">
+                        <div class="space-y-8">
+                            <h4 class="text-4xl font-bold uppercase text-cyan-400">Alcance Estimado</h4>
+                            <p class="text-2xl font-light text-slate-300 leading-relaxed">Se proyecta alcanzar un Prototipo Funcional (MVP) que incluya el Mirador del Tiempo, el sistema de navegación gestual y el primer hito completo: La Singularidad/Big Bang.</p>
                         </div>
-                        <div class="space-y-6">
-                            <h4 class="text-3xl font-bold uppercase text-cyan-400">Recursos Básicos</h4>
-                            <p class="text-slate-400">
-                                <b>Software:</b> Unity 6, VFX Graph, Meta SDK.<br>
-                                <b>Hardware:</b> Meta Quest 3/2 (Standalone).<br>
-                                <b>Conocimientos:</b> C#, Optimización VR, Astrofísica.<br>
-                                <b>Tiempo:</b> 1 Semestre Académico (16 semanas).
-                            </p>
+                        <div class="space-y-8">
+                            <h4 class="text-4xl font-bold uppercase text-cyan-400">Recursos Básicos</h4>
+                            <div class="text-2xl text-slate-400 space-y-4">
+                                <p><b>Software:</b> Unity 6, VFX Graph, Meta SDK.</p>
+                                <p><b>Hardware:</b> Meta Quest 3/2 (Standalone).</p>
+                                <p><b>Conocimientos:</b> C#, Optimización VR, Astrofísica.</p>
+                                <p><b>Tiempo:</b> 1 Semestre Académico (16 semanas).</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="glass-card p-12 rounded-[3rem] space-y-10 border-r-[20px] border-cyan-500">
-                        <div class="space-y-6">
-                            <h4 class="text-3xl font-bold uppercase text-cyan-400">Distribución de Roles</h4>
-                            <p class="text-xl text-slate-400"><b>Ignacio Aguayo (Solo Developer):</b> Gestión general, Lead Developer, Artista Técnico y Diseñador Narrativo. Coherencia técnica garantizada.</p>
+                    <div class="glass-card p-16 space-y-14 border-r-[40px] border-cyan-500">
+                        <div class="space-y-8">
+                            <h4 class="text-4xl font-bold uppercase text-cyan-400">Distribución de Roles</h4>
+                            <p class="text-2xl font-light text-slate-300"><b>Ignacio Aguayo (Solo Developer):</b> Gestión general, Lead Developer, Artista Técnico y Diseñador Narrativo. Coherencia técnica garantizada.</p>
                         </div>
-                        <div class="space-y-6">
-                            <h4 class="text-3xl font-bold uppercase text-cyan-400">Planificación</h4>
-                            <ul class="space-y-4 mono text-xs uppercase text-slate-500">
-                                <li class="flex justify-between border-b border-white/5 pb-2"><span>Semanas 1-4: Pre-producción</span><span class="text-cyan-400">OK</span></li>
-                                <li class="flex justify-between border-b border-white/5 pb-2"><span>Semanas 5-8: Core Hand Tracking</span><span class="text-white">EN CURSO</span></li>
-                                <li class="flex justify-between"><span>Semanas 13-16: Pulido y Entrega</span><span>JUNIO 2024</span></li>
+                        <div class="space-y-8">
+                            <h4 class="text-4xl font-bold uppercase text-cyan-400">Planificación</h4>
+                            <ul class="space-y-8 mono text-xl uppercase text-slate-500">
+                                <li class="flex justify-between border-b border-white/5 pb-4"><span>Semanas 1-4: Pre-producción</span><span class="text-cyan-400">OK</span></li>
+                                <li class="flex justify-between border-b border-white/5 pb-4"><span>Semanas 5-8: Core Gestual</span><span class="text-white font-bold">ACTIVO</span></li>
+                                <li class="flex justify-between"><span>Semanas 13-16: Entrega Final</span><span>JUNIO 2026</span></li>
                             </ul>
                         </div>
                     </div>
@@ -315,14 +316,14 @@
         <!-- 08 ESTADO DEL PROYECTO -->
         <section id="s8" class="relative">
             <span class="section-number">08</span>
-            <div class="max-w-5xl mx-auto space-y-16 text-center">
-                <h2 class="text-6xl font-bold uppercase text-cyan-400">08_Estado</h2>
-                <div class="p-20 glass-card rounded-[5rem]">
-                    <p class="text-4xl font-light italic text-slate-300 mb-12">"Fase de definición conceptual terminada. Actualmente prototipando la manipulación de partículas para el Solemne 2."</p>
-                    <div class="w-full bg-slate-800 h-3 rounded-full relative overflow-hidden">
-                        <div class="absolute left-0 top-0 h-full bg-cyan-500 w-1/4 animate-pulse shadow-[0_0_30px_#00f2ff] rounded-full"></div>
+            <div class="max-w-6xl mx-auto space-y-20 text-center">
+                <h2 class="text-8xl font-bold uppercase text-cyan-400">08_Estado</h2>
+                <div class="p-24 glass-card rounded-[8rem]">
+                    <p class="text-5xl font-light italic text-slate-300 mb-16">"Fase de definición conceptual terminada. Actualmente prototipando la manipulación de partículas para el Solemne 2."</p>
+                    <div class="w-full bg-slate-800 h-5 rounded-full relative overflow-hidden">
+                        <div class="absolute left-0 top-0 h-full bg-cyan-500 w-1/4 animate-pulse shadow-[0_0_50px_#00f2ff] rounded-full"></div>
                     </div>
-                    <p class="mono text-sm text-slate-600 mt-6 tracking-widest uppercase">Process: 25%_Deployed</p>
+                    <p class="mono text-xl text-slate-600 mt-10 tracking-[0.5em] uppercase font-black">SYSTEM_PROCESS: 25%_DEPLOYED</p>
                 </div>
             </div>
         </section>
@@ -330,20 +331,20 @@
         <!-- 09 PROPUESTA DE VALOR -->
         <section id="s9" class="relative">
             <span class="section-number">09</span>
-            <div class="glass-card p-20 rounded-[6rem] border-t-[20px] border-cyan-500 space-y-16">
-                <h2 class="text-7xl font-bold uppercase tracking-tighter text-white text-center">09_Propuesta de Valor</h2>
-                <div class="grid md:grid-cols-3 gap-16">
-                    <div class="space-y-6">
-                        <h4 class="mono font-bold text-cyan-400 uppercase text-xl">Rigurosidad Científica</h4>
-                        <p class="text-xl text-slate-400 leading-relaxed">Uso de datos reales de la ESO/NASA para que el asombro sea veraz y educativo.</p>
+            <div class="glass-card p-24 rounded-[8rem] border-t-[35px] border-cyan-500 space-y-20">
+                <h2 class="text-8xl font-bold uppercase tracking-tighter text-white text-center">09_Propuesta de Valor</h2>
+                <div class="grid md:grid-cols-3 gap-20">
+                    <div class="space-y-8 tech-border">
+                        <h4 class="mono font-bold text-cyan-400 uppercase text-3xl">Rigurosidad Científica</h4>
+                        <p class="text-2xl text-slate-400 leading-relaxed">Uso de datos reales de la ESO/NASA para que el asombro sea veraz y educativo.</p>
                     </div>
-                    <div class="space-y-6">
-                        <h4 class="mono font-bold text-cyan-400 uppercase text-xl">Inmersión Kinestésica</h4>
-                        <p class="text-xl text-slate-400 leading-relaxed">Sentir el tiempo en las manos aumenta la retención de conceptos físicos complejos.</p>
+                    <div class="space-y-8 tech-border border-blue-500">
+                        <h4 class="mono font-bold text-blue-400 uppercase text-3xl">Inmersión Kinestésica</h4>
+                        <p class="text-2xl text-slate-400 leading-relaxed">Sentir el tiempo en las manos mediante gestos naturales aumenta radicalmente la retención.</p>
                     </div>
-                    <div class="space-y-6">
-                        <h4 class="mono font-bold text-cyan-400 uppercase text-xl">Soberanía de Datos</h4>
-                        <p class="text-xl text-slate-400 leading-relaxed">Chile no solo pone el cielo, sino la tecnología para interpretar el universo.</p>
+                    <div class="space-y-8 tech-border border-indigo-500">
+                        <h4 class="mono font-bold text-indigo-400 uppercase text-3xl">Soberanía de Datos</h4>
+                        <p class="text-2xl text-slate-400 leading-relaxed">Chile no solo pone el cielo, sino la tecnología punta para interpretar el origen.</p>
                     </div>
                 </div>
             </div>
@@ -351,59 +352,60 @@
 
         <!-- CIERRE MONUMENTAL -->
         <footer class="min-h-screen flex items-center justify-center text-center">
-            <div class="space-y-32">
-                <div class="w-4 h-96 bg-gradient-to-b from-cyan-500 via-blue-600 to-transparent mx-auto"></div>
-                <h2 class="text-8xl md:text-[13rem] text-white font-bold italic tracking-tighter leading-[0.8] drop-shadow-[0_0_80px_rgba(255,255,255,0.4)]">
+            <div class="space-y-40">
+                <div class="w-5 h-[400px] bg-gradient-to-b from-cyan-500 via-blue-600 to-transparent mx-auto"></div>
+                <h2 class="text-8xl md:text-[15rem] text-white font-bold italic tracking-tighter leading-[0.8] drop-shadow-[0_0_120px_rgba(255,255,255,0.5)]">
                     "Un libro que muestra el origen de todo para quienes estén dispuestos a abrirlo."
                 </h2>
-                <div class="pt-40 mono text-slate-600 uppercase tracking-[2em]">IGNACIO AGUAYO / CONCEPCIÓN / 2024</div>
+                <div class="pt-40 mono text-slate-500 uppercase tracking-[3em] font-black text-2xl">IGNACIO AGUAYO / CHILE / 2026</div>
             </div>
         </footer>
 
     </div>
 
     <script>
+        // --- THREE.JS: QUANTUM NOVA ENGINE (V4 DEFINITIVE) ---
         let scene, camera, renderer, particles, sun, corona;
         const container = document.getElementById('canvas-container');
 
         function init3D() {
             scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
             camera.position.z = 5;
 
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             renderer.setSize(window.innerWidth, window.innerHeight);
             container.appendChild(renderer.domElement);
 
-            // Core Nova
-            const sunGeom = new THREE.IcosahedronGeometry(1.6, 12);
+            // Geometría del Núcleo (Nova)
+            const sunGeom = new THREE.IcosahedronGeometry(1.5, 12);
             const sunMat = new THREE.MeshBasicMaterial({ 
-                color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.12 
+                color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0.15, side: THREE.DoubleSide
             });
             sun = new THREE.Mesh(sunGeom, sunMat);
             scene.add(sun);
 
-            // Aura
-            const coronaGeom = new THREE.TorusGeometry(2.3, 0.012, 16, 100);
-            const coronaMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.04 });
+            // Corona estelar interactiva
+            const coronaGeom = new THREE.TorusGeometry(2.5, 0.012, 16, 100);
+            const coronaMat = new THREE.MeshBasicMaterial({ color: 0x00f2ff, transparent: true, opacity: 0.05, side: THREE.DoubleSide });
             corona = new THREE.Mesh(coronaGeom, coronaMat);
             scene.add(corona);
 
-            // Star Field
+            // Flujo de Partículas (25,000 para WOW effect)
             const particleGeom = new THREE.BufferGeometry();
-            const count = 18000;
+            const count = 25000;
             const posArray = new Float32Array(count * 3);
             for(let i = 0; i < count * 3; i+=3) {
                 const angle = Math.random() * Math.PI * 2;
-                const radius = 3 + Math.random() * 35;
+                const radius = 2 + Math.random() * 50;
                 posArray[i] = Math.cos(angle) * radius;
                 posArray[i+1] = Math.sin(angle) * radius;
-                posArray[i+2] = (Math.random() - 0.5) * 100;
+                posArray[i+2] = (Math.random() - 0.5) * 150;
             }
             particleGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
             const particleMat = new THREE.PointsMaterial({ 
-                size: 0.02, color: 0x00f2ff, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending 
+                size: 0.03, color: 0x00f2ff, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending 
             });
             particles = new THREE.Points(particleGeom, particleMat);
             scene.add(particles);
@@ -413,42 +415,66 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            const scrollPerc = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
             
-            sun.rotation.y += 0.003;
-            sun.rotation.z += 0.001;
-            corona.rotation.x += 0.015;
-            particles.rotation.z += 0.0002;
-
-            const pos = particles.geometry.attributes.position.array;
-            for(let i = 2; i < pos.length; i+=3) {
-                pos[i] += 0.03 + (scrollPerc * 1.5);
-                if(pos[i] > 5) pos[i] = -95;
+            // Cálculo protegido contra divisiones por cero o valores NaN
+            let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            let scrollPerc = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+            if (isNaN(scrollPerc) || !isFinite(scrollPerc)) scrollPerc = 0;
+            scrollPerc = Math.max(0, Math.min(1, scrollPerc)); // Mantiene el valor estrictamente entre 0 y 1
+            
+            // Si el objeto existe, animar
+            if (sun) {
+                sun.rotation.y += 0.004;
+                sun.rotation.z += 0.002;
+                const s = 1 + (scrollPerc * 25); // Crecimiento masivo al bajar
+                sun.scale.set(s, s, s);
+                sun.material.opacity = 0.15 + (scrollPerc * 0.75);
             }
-            particles.geometry.attributes.position.needsUpdate = true;
-
-            camera.position.z = 5 - (scrollPerc * 3.5);
-            const s = 1 + (scrollPerc * 14);
-            sun.scale.set(s, s, s);
-
-            if (scrollPerc > 0.9) {
-                particles.material.color.setHex(0xffffff);
-                sun.material.color.setHex(0xffffff);
-            } else {
-                particles.material.color.setHex(0x00f2ff);
-                sun.material.color.setHex(0x00f2ff);
+            
+            if (corona) {
+                corona.rotation.x += 0.02;
+                corona.rotation.y += 0.01;
             }
 
-            renderer.render(scene, camera);
+            if (particles) {
+                particles.rotation.z += 0.0005;
+                const pos = particles.geometry.attributes.position.array;
+                for(let i = 2; i < pos.length; i+=3) {
+                    pos[i] += 0.05 + (scrollPerc * 3.5); // Aceleración violenta al bajar
+                    if(pos[i] > 5) pos[i] = -145;
+                }
+                particles.geometry.attributes.position.needsUpdate = true;
+                
+                // Cambio cromático final (Cian -> Blanco Big Bang)
+                if (scrollPerc > 0.88) {
+                    particles.material.color.setHex(0xffffff);
+                    if (sun) sun.material.color.setHex(0xffffff);
+                } else {
+                    particles.material.color.setHex(0x00f2ff);
+                    if (sun) sun.material.color.setHex(0x00f2ff);
+                }
+            }
+
+            if (camera) {
+                camera.position.z = 5 - (scrollPerc * 4.5);
+            }
+
+            if (renderer && scene && camera) {
+                renderer.render(scene, camera);
+            }
         }
 
+        // Evento Resize Protegido
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
         });
 
-        window.onload = init3D;
+        // Forzar inicialización directa para evitar pantallas negras por carga retrasada
+        init3D();
     </script>
 </body>
 </html>
