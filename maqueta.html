@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex del Cosmos — La Experiencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--cyan:#4FDBF2;--gold:#E7B24A;--soft:#d9ddec;--mut:#8a91ac;--line:rgba(80,120,160,.35)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Exo 2',sans-serif;color:var(--soft);background:#0a0e1c;line-height:1.6;min-height:100vh}
+.bg{position:fixed;inset:0;z-index:-2;background:url('assets/nebula.jpg') center/cover no-repeat;filter:brightness(.45) saturate(1.05)}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,22,.6),rgba(7,10,22,.94))}
+h1,.serif{font-family:'Cinzel',serif}
+.cyan{color:var(--cyan)} .gold{color:var(--gold)}
+.wrap{max-width:900px;margin:auto;padding:4rem 1.5rem;text-align:center}
+.kicker{letter-spacing:5px;text-transform:uppercase;color:var(--cyan);font-size:.8rem;margin-bottom:1rem}
+h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:3px;line-height:1.1}
+.sub{color:var(--gold);font-style:italic;font-size:1.2rem;margin-top:.6rem}
+.frame{position:relative;margin:2.5rem 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  aspect-ratio:16/9;background:#05060f;display:flex;align-items:center;justify-content:center}
+.frame::before,.frame::after{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--cyan)}
+.frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0;border-radius:16px 0 0 0}
+.frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0;border-radius:0 0 16px 0}
+.frame img{width:100%;height:100%;object-fit:cover;opacity:.45}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem}
+.overlay .play{font-size:3rem;color:var(--cyan);margin-bottom:.6rem;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.overlay h2{font-family:'Cinzel';font-size:1.6rem;letter-spacing:1px}
+.overlay p{color:var(--mut);margin-top:.5rem;max-width:480px}
+.frame iframe{width:100%;height:100%;border:0}
+.links{margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{border:1px solid var(--cyan);color:var(--cyan);padding:.7rem 1.5rem;border-radius:999px;
+  text-decoration:none;letter-spacing:1px;font-size:.85rem;transition:.2s}
+.btn:hover{background:var(--cyan);color:#05060f}
+footer{color:var(--mut);font-size:.8rem;margin-top:3rem;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+  <div class="kicker">Obra Experimental VR</div>
+  <h1>CODEX <span class="cyan">DEL COSMOS</span></h1>
+  <div class="sub">La Experiencia — El Mirador del Tiempo</div>
+
+  <!-- ===== ZONA DEL VIDEO =====
+       Cuando subas el video a YouTube, reemplaza TODO el bloque .frame de abajo por:
+       <div class="frame"><iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO"
+            title="Codex del Cosmos" allowfullscreen></iframe></div>
+  -->
+  <div class="frame">
+    <img src="assets/manos.jpg" alt="teaser">
+    <div class="overlay">
+      <div class="play">▶</div>
+      <h2 class="serif">Video en camino</h2>
+      <p>La maqueta funcional de la experiencia se publicará aquí muy pronto. Mientras tanto, explora la biblia de arte completa.</p>
+    </div>
+  </div>
+
+  <div class="links">
+    <a class="btn" href="index.html">▣ Ver la Biblia de Arte</a>
+  </div>
+
+  <footer>
+    Ignacio Aguayo · Taller de Animación Avanzado III 2026 · Universidad San Sebastián
+  </footer>
+</div>
+</body>
+</html>
